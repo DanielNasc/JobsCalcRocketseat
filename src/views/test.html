@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+  font-family: sans-serif;
+  text-align:center;
+  margin:auto;
+  
+}
+
+body{
+  background: #eee;
+}
+
+h1{
+  margin: 15px;
+}
+
+ul{
+  margin-top:10px;
+  width: 400px;
+  /*height: 400px;*/
+  background: white;
+  border: 1px #111 solid;
+  padding: 15px;
+  border-radius: 15px;
+}
+li{
+  list-style:none
+}
+code{
+  background: gray;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+h2{
+  margin-top:10px;
+}
+
+.normal{
+  margin-top: 30px;
+  border: 1px solid black;
+  width: 500px
+  ;
+  padding: 30px;
+  border-radius: 20px;
+  background:#f6f6f6;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.normal:hover{
+  /*background: #fefefe;*/
+  background: #fff;
+  transition: 0.3s
+}
+
+code:hover{
+  background: #ffff00;
+  border: 1px solid black;
+}
+
+footer{
+  color:white;
+  background: black;
+  margin-top: 20px;
+  padding:20px;
+}
+
+progress{
+  height: 30px;
+}
+.btn{
+  margin: auto 5px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+          OLÁ
+        </h1>
+    </header>
+    
+    <main>
+    
+    <section class='normal'>
+      
+    <details>
+      <sumary><h2>TESTE DE <code>&lt;details&gt;</code></h2></sumary>
+      <ul>
+        <li>TEST</li>
+        <li>TEST</li>
+        <li>TEST</li>
+        <li>TEST</li>
+      </ul>
+    </details>
+    
+    </section>
+    
+    <section class="normal">
+      <label for="inp"> Selecione o dia: </label>
+      <input type="text" id="inp" list='lista'>
+      <datalist id='lista'>
+        <option value="Domingo"></option>
+        <option value="Segunda"></option>
+        <option value="Terça"></option>
+        <option value="Quarta"></option>
+        <option value="Quinta"></option>
+        <option value="Sexta"></option>
+        <option value="Sabado"></option>
+      </datalist>
+    </section>
+    
+    <section class="normal">
+      <ol contenteditable>
+        <li>Primeiro</li>
+        <li>Segundo</li>
+      </ol>
+    </section>
+    
+    <section class="normal">
+      <p> <mark>Lorem ipsum</mark> , dolor sit amet consectetur adipisicing elit. Eos nobis ad blanditiis, reprehenderit ipsum accusantium, possimus dolorem veritatis labore ipsa vero recusandae minus totam placeat porro repellendus  unde fuga. Error?</p>
+    </section>
+    
+    <section class="normal">
+      <label for="top">Escolhe aí: </label>
+      <select name="sele" id="top">
+        <optgroup label='EYs'>
+        <option value="1">Pei</option>
+        <option value="2">Tey</option>
+        <option value="3">Tei</option>
+        <option value="4">Pey</option>
+      </optgroup>
+        
+        <optgroup label='test'>
+          <option value="5">test1</option>
+          <option value="6">test2</option>
+          <option value="7">test3</option>
+          <option value="8">test4</option>
+          
+        </optgroup>
+      </select>
+    </section>
+      
+      <section class="normal">
+        
+        <progress value='10' max='100' id='pog'>
+        </progress>
+        <div>
+          <input type="button" value="Start" class='btn' onclick='clicou()'>
+          <input type="button" value="Reset" class='btn' onclick='resetar()'>
+          <input type="button" value="Pausar" onclick='pausar()' >
+        </div>
+        
+      </section>
+    </main>
+    
+    <footer>&copy; cccounte</footer>
+
+    <script>
+    var reseta = false
+    let pause = false
+      
+    function pausar(){
+        pause = true
+      }
+
+    const test = 'test'
+    function clicou(){
+          pause = false
+  
+          let 
+            progress = 0,
+            progressBar = document.querySelector('#pog'),
+            progressInterval = 10,
+            progressChange = setInterval(()=>{
+              progress += progressInterval
+              progressBar.value = progress
+              
+              if(progress >= 100){
+                clearInterval(progressChange)
+              }
+              if(pause == true){
+                clearInterval(progressChange)
+              }
+              if(reseta==true){
+                clearInterval(progressChange)
+              }
+            },100)
+          
+}
+
+      function resetar(){
+            reseta = true
+            let resI = setInterval(()=>{reseta=false 
+            clearInterval(resI)   
+            document.querySelector('#pog').value = 0                         
+          }, 100)
+}
+
+
+</script>
+</body>
+</html>
