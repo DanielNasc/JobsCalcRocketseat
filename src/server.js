@@ -15,6 +15,3 @@ app.use(express.urlencoded({ extended : true }))
 //app.use((req, res) => {res.status(400).send('OPS! essa pagina não existe! (erro 404)')})
 
 app.use(routes)
-
-app.listen(80)
-
